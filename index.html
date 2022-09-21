@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"2do Parcial"</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="principal">
+    <nav>
+        <div class="logo"><img src="imagenes/1.jpg" width="200" height="100"></div>
+        <div class="menu">
+            <ul>
+                <li>INICIO</li>
+                <li>SERVICIOS</li>
+                <li>SOBRE NOSOTROS</li>
+                <li>CONTACTOS</li>
+            </ul>
+        </div>
+        <div>
+            <input type="text" id="nombre"> <br><br><br>
+            <input type="button" value="INICIO DE SESION" onclick=" + alert('Bienvenido: '+document.getElementById('nombre').value)">
+        </div>
+    </nav>
+    <figure>
+        <img src="imagenes/3.jpg" width="1347px" height="400px">
+    </figure>
+    <main>
+       <center><h2>HEADLINE 2</h2></center>
+        <div class="cajatexto">CONVERSOR DE MONEDAS</div>
+        <section>
+            <article>
+               <b><p> INGRESE UN MONTO:</p></b>
+            <br>
+            <input type="number" id="moneda" min="1" max="10000">
+            </article>
+            <article>
+                <b><p> ELIJA UNA MONEDA:</p></b>
+                <br>
+                <input type="radio" name="cambio" id="uno"> DOLAR
+                <br><br>
+                <input type="radio" name="cambio" id="dos"> BOLIVIANOS
+                
+            </article>
+            <article>
+                <b><p> RESULTADO:</p></b>
+                <textarea name="resultado" id="total" cols="20" rows="5"></textarea>
+            </article>
+        </section>        
+    </main>
+    <footer>
+   <center><h3>HEADLINE 3</h3></center>
+        <div class="cajatexto1"></div>
+        <div>
+             <center><input type="button" id="cotizador" value="CALCULAR" onclick="convertir()"></center> <!-- alert('Gracias por pinchar'); -->
+        </div>
+        <center><div class="logo1"><img src="imagenes/1.jpg" width="200" height="100"></div></center>
+       <div class="contenido">
+        <div class="cajapie">
+            <p><b>Articulos</b></p>
+        </br>
+            <p>Camisas</p>
+            <p>Pantalones</p>
+            <p>Deportivos</p>
+            <p>Zapatillas</p>
+        </div>
+        <div class="cajapie">
+            <p><b>Mision</b></p>
+        </br>
+            <p>Llevar nuestros modelos de trabajo al máximo de lugares posibles, para que todo el mundo pueda disfrutar de la moda y el mejor diseño.</p>
+        </div>
+        <div class="cajapie">
+            <p><b>Vision</b></p>
+            <br>
+            <p>Velar por la calidad de nuestras prendas y el servicio que ofrecemos a nuestros clientes</p>
+        </div>
+        <div class="cajapie">
+            <p><b>Redes Sociales</b></p>
+            <br>
+            <img src="imagenes/facebook.png" alt="" width="20px" height= 20px><p>-Facebook</p>
+            <img src="imagenes/whatsapp.png" alt="" width="20px" height= 20px><p>-Whatsapp</p>
+            <img src="imagenes/twiter.png" alt="" width="20px" height= 20px><p>-Twiter</p>
+        </div>
+       </div> 
+    </footer>
+    </div>
+<script>
+    function convertir(){
+            var valore = parseInt(document.getElementById("moneda").value);
+            var resultado = 0;
+            var dolar = 6.96;
+            var boliviano = 0.14;
+            if(document.getElementById("uno").checked){
+                resultado = valore * dolar;
+               // alert("El resultado es " + resultado);
+                document.getElementById("total").innerHTML=("EL RESULTADO ES ")+resultado+(" Bs.");
+            }else if (document.getElementById("dos").checked){
+                resultado = valore * boliviano;
+                //alert("El resultado es " + resultado);
+                document.getElementById("total").innerHTML=("EL RESULTADO ES ")+resultado.toFixed(2)+(" $.");
+
+            }else{
+                //alert("No se puede calcular");
+                document.getElementById("total").innerHTML=("NO SE PUEDE CALCULAR - ELIJA UNA OPCION");
+            }
+                 
+        }
+</script>  
+</body>
+</html>
